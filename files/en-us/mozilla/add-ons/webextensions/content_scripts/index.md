@@ -146,7 +146,6 @@ In addition to the standard DOM APIs, content scripts can use the following WebE
 
 **From [`extension`](/en-US/docs/Mozilla/Add-ons/WebExtensions/API/extension):**
 
-- [`getURL()`](/en-US/docs/Mozilla/Add-ons/WebExtensions/API/extension/getURL)
 - [`inIncognitoContext`](/en-US/docs/Mozilla/Add-ons/WebExtensions/API/extension/inIncognitoContext)
 
 **From [`runtime`](/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime):**
@@ -285,7 +284,7 @@ browser.runtime.onMessage.addListener(notify);
 function notify(message) {
   browser.notifications.create({
     "type": "basic",
-    "iconUrl": browser.extension.getURL("link.png"),
+    "iconUrl": browser.runtime.getURL("link.png"),
     "title": "You clicked a link!",
     "message": message.url
   });
